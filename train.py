@@ -11,7 +11,7 @@ from torch.utils.data import DataLoader
 
 from nets.model import discriminator, generator
 from utils.callbacks import LossHistory
-from utils.dataloader import CycleGan_dataset_collate, CycleGanDataset
+from utils.dataloader import OurModel_dataset_collate, OurModelDataset
 from utils.utils import get_lr_scheduler, set_optimizer_lr, show_config
 from utils.utils_fit import fit_one_epoch
 
@@ -171,7 +171,7 @@ if __name__ == "__main__":
             raise ValueError("数据集过小，无法进行训练，请扩充数据集。")
 
 
-        train_dataset   = CycleGanDataset(annotation_lines_A, annotation_lines_B, input_shape)
+        train_dataset   = OurModelDataset(annotation_lines_A, annotation_lines_B, input_shape)
         
         if distributed:
             train_sampler   = torch.utils.data.distributed.DistributedSampler(train_dataset, shuffle=True,)

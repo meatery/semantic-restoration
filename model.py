@@ -9,7 +9,7 @@ from utils.utils import (cvtColor, postprocess_output, preprocess_input,
                          resize_image, show_config)
 
 
-class CYCLEGAN(object):
+class OURMODEL(object):
     _defaults = {
 
         "model_path"        : 'model_data/G.pth',

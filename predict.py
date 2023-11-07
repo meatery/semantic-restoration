@@ -1,7 +1,3 @@
-#-----------------------------------------------------------------------#
-#   predict.py将单张图片预测、摄像头检测、FPS测试和目录遍历检测等功能
-#   整合到了一个py文件中，通过指定mode进行模式的修改。
-#-----------------------------------------------------------------------#
 import time
 
 import cv2
@@ -11,7 +7,7 @@ from PIL import Image
 from model import CYCLEGAN
 
 if __name__ == "__main__":
-    cyclegan = CYCLEGAN()
+    ourmodel = OURMODEL()
     mode = "predict"
 
     #video_path      = 0
@@ -32,7 +28,7 @@ if __name__ == "__main__":
                 print('Open Error! Try again!')
                 continue
             else:
-                r_image = cyclegan.detect_image(image)
+                r_image = ourmodel.detect_image(image)
                 r_image.show()
     else:
         raise AssertionError("Please specify the correct mode: 'predict', 'video', 'fps', 'dir_predict'.")
